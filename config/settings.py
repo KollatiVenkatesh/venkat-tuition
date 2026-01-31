@@ -132,22 +132,22 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-import os
-
-# ---- TEMP SUPERUSER AUTO-CREATE (RENDER FREE PLAN) ----
-RENDER_SUPERUSER = os.environ.get("RENDER_SUPERUSER", "false")
-
-if RENDER_SUPERUSER == "true":
-    from django.contrib.auth import get_user_model
-
-    User = get_user_model()
-    username = os.environ.get("RENDER_ADMIN_USERNAME", "admin")
-    password = os.environ.get("RENDER_ADMIN_PASSWORD", "admin123")
-    email = os.environ.get("RENDER_ADMIN_EMAIL", "admin@example.com")
-
-    if not User.objects.filter(username=username).exists():
-        User.objects.create_superuser(
-            username=username,
-            email=email,
-            password=password
-        )
+# import os
+#
+# # ---- TEMP SUPERUSER AUTO-CREATE (RENDER FREE PLAN) ----
+# RENDER_SUPERUSER = os.environ.get("RENDER_SUPERUSER", "false")
+#
+# if RENDER_SUPERUSER == "true":
+#     from django.contrib.auth import get_user_model
+#
+#     User = get_user_model()
+#     username = os.environ.get("RENDER_ADMIN_USERNAME", "admin")
+#     password = os.environ.get("RENDER_ADMIN_PASSWORD", "admin123")
+#     email = os.environ.get("RENDER_ADMIN_EMAIL", "admin@example.com")
+#
+#     if not User.objects.filter(username=username).exists():
+#         User.objects.create_superuser(
+#             username=username,
+#             email=email,
+#             password=password
+#         )
