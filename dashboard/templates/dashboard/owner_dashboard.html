@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="mb-4">Owner Dashboard</h3>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h6>Total Students</h6>
+            <h3>{{ total_students }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h6>Active Students</h6>
+            <h3>{{ active_students }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h6>Total Staff</h6>
+            <h3>{{ total_staff }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-3 shadow-sm">
+            <h6>Staff Present Today</h6>
+            <h3>{{ staff_present_today }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-3 shadow-sm">
+            <h6>Fees Collected</h6>
+            <h3>₹ {{ total_collected }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card p-3 shadow-sm bg-warning">
+            <h6>Pending Fees</h6>
+            <h3>₹ {{ total_pending }}</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

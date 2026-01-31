@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Staff Dashboard</h3>
+
+<div class="card p-3 mt-3">
+    {% if attendance %}
+        <p><strong>Today Attendance:</strong> {{ attendance.status }}</p>
+    {% else %}
+        <p>No attendance marked for today.</p>
+    {% endif %}
+</div>
+{% endblock %}
