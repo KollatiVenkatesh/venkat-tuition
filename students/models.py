@@ -12,7 +12,8 @@ class Student(models.Model):
     student_class = models.IntegerField(choices=CLASS_CHOICES)
     batch = models.CharField(max_length=50)
     parent_mobile = models.CharField(max_length=15)
-    join_date = models.DateField(auto_now_add=True)
+    # join_date = models.DateField(auto_now_add=True)
+    joining_date = models.DateField()
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
